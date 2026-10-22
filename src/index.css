@@ -1,0 +1,305 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "Space Mono", monospace;
+  
+  --color-bg-paper: #f2efeb;
+  --color-ink: #1a1a1c;
+  --color-ink-muted: #57575a;
+  --color-ink-faint: rgba(26, 26, 28, 0.08);
+  --color-ink-border: rgba(26, 26, 28, 0.12);
+  --color-accent: #c52222;
+  --color-accent-hover: #a81818;
+}
+
+:root {
+  --bg: #f2efeb;
+  --ink: #1a1a1c;
+  --accent: #c52222;
+  --ink-faint: rgba(26, 26, 28, 0.08);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Variation 2 Space Mono Typography */
+.mono {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+}
+
+/* Variation 2 Brand */
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Variation 2 Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  padding: 1.1rem 2.2rem;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.btn:hover {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+}
+
+.btn-accent:hover {
+  background: #a81818;
+  border-color: #a81818;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.6rem;
+  border: 1px solid var(--ink);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
+/* Emergency Pill (from Variation 2) */
+.emergency-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.emergency-pill:hover {
+  background: #a81818;
+  transform: translateY(-1px);
+}
+
+/* Variation 2 Blueprint Drafting Panel */
+.blueprint-panel {
+  background: #ffffff;
+  border: 1px solid var(--ink);
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(26, 26, 28, 0.04);
+}
+
+.blueprint-panel::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--ink-faint);
+  pointer-events: none;
+}
+
+.blueprint-svg {
+  flex: 1;
+  background: radial-gradient(var(--ink-faint) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  border: 1px solid var(--ink-faint);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Architectural Card with double hairline border */
+.arch-card {
+  background: #ffffff;
+  border: 1px solid rgba(26, 26, 28, 0.15);
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.arch-card:hover {
+  border-color: var(--ink);
+  box-shadow: 0 8px 30px rgba(26, 26, 28, 0.06);
+}
+
+/* Data Grid & Cells (from Variation 2) */
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: auto;
+}
+
+.data-cell {
+  border-top: 1px solid var(--ink);
+  padding-top: 1rem;
+}
+
+.data-cell .value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  display: block;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* Blueprint Sheet Styles */
+.blueprint-dark {
+  background-color: #0d1218;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+}
+
+.blueprint-paper {
+  background-color: #f7f5f0;
+  background-image: 
+    linear-gradient(rgba(26, 26, 28, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 28, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(26, 26, 28, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 28, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+}
+
+.blueprint-studio {
+  background-color: #17181c;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Badges */
+.badge-clean {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(26, 26, 28, 0.15);
+  background-color: #ffffff;
+  color: var(--ink);
+}
+
+.badge-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--accent);
+  background-color: rgba(197, 34, 34, 0.08);
+  color: var(--accent);
+}
+
+/* Clean Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eae5df;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5beba;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink);
+}

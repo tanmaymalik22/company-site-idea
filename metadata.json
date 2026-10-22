@@ -1,0 +1,6 @@
+{
+  "name": "ApexForge Auto Designs | Automotive Child Parts & Manufacturing",
+  "description": "Company profile of ApexForge Auto Designs. Specializing in automotive child parts manufacturing across 19 power presses of different capacity, 19 active dies (30 total available), single dedicated plant, decoiler/recoiler, surface grinders, complete dimensional measuring tools, and DG generator backup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
